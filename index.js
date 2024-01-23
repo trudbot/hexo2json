@@ -56,21 +56,3 @@ export function hexo2json(pth = folderPath) {
     });
     return res;
 }
-
-const s = 
-`
----
-title: blog title
-mathjax: true
-tags:
-  - tag1
-  - tag2
-categories: cg1
-abbrlink: 23124
-date: 2023-02-27 21:46:38
----
-博客的摘要、前言。
-<!--more-->
-博客正文
-`
-console.log(tran(s));
