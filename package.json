@@ -1,11 +1,12 @@
 {
   "name": "hexo2json",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "Convert blogs in hexo to JSON format",
-  "main": "index.js",
+  "main": "index",
+  "types": "index.d.ts",
   "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "tsc && node test.js"
   },
   "repository": {
     "type": "git",
@@ -21,6 +22,7 @@
   },
   "homepage": "https://github.com/trudbot/hexo2json#readme",
   "dependencies": {
+    "@types/node": "^20.11.5",
     "yaml": "^2.3.4"
   }
 }

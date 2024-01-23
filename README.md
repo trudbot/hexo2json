@@ -1,5 +1,5 @@
 # hexo2json
-Convert blogs in hexo to JSON format
+Convert blogs in hexo to JSON format!
 ## Usage
 hexo框架有如下博客格式.
 ```
@@ -32,4 +32,8 @@ date: 2023-02-27 21:46:38
   desc: '\n博客的摘要、前言。\n',
   content: '\n博客正文\n'
 }
+```
+Install through NPM and use it in a browser or node
+```
+npm install hexo2json
 ```
