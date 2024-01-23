@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "Convert blogs in hexo to JSON format",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -18,5 +19,8 @@
   "bugs": {
     "url": "https://github.com/trudbot/hexo2json/issues"
   },
-  "homepage": "https://github.com/trudbot/hexo2json#readme"
+  "homepage": "https://github.com/trudbot/hexo2json#readme",
+  "dependencies": {
+    "yaml": "^2.3.4"
+  }
 }
