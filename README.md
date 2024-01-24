@@ -29,11 +29,19 @@ date: 2023-02-27 21:46:38
     abbrlink: 23124,
     date: '2023-02-27 21:46:38'
   },
-  desc: '\n博客的摘要、前言。\n',
-  content: '\n博客正文\n'
+  desc: '博客的摘要、前言。',
+  content: '博客正文'
 }
 ```
 Install through NPM and use it in a browser or node
 ```
 npm install hexo2json
+```
+
+```
+import Hexo from hexo2json
+const blogText = "desc\n<!--more-->\ncontent";
+const resultJson = Hexo.parse(blogText);
+console.log(resultJson);
+console.log(Hexo.stringify(resultJson));
 ```

@@ -1,7 +1,7 @@
 import YAML from 'yaml';
 const metaRegex = /^---\n([\s\S]*?)\n---\n([\s\S]*?)$/;
 const descRegex = /^([\s\S]*?)\n<!--more-->\n([\s\S]*?)$/;
-export function parse(text) {
+function parse(text) {
     if (text === null || text === undefined) {
         return {
             meta: {},
@@ -37,7 +37,19 @@ export function parse(text) {
         content
     };
 }
+function stringify(hexo) {
+    let meta = '';
+    if (hexo.meta) {
+        meta = YAML.stringify(hexo.meta);
+    }
+    let desc = '';
+    if (hexo.desc) {
+        desc = `${hexo.desc}\n<!--more-->\n`;
+    }
+    return `---\n${meta}---\n${desc}${hexo.content}`;
+}
 const Hexo = {
-    parse
+    parse,
+    stringify
 };
 export default Hexo;

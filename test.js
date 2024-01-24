@@ -4,7 +4,12 @@ String.prototype.expectEqual = function(obj) {
     const res = JSON.stringify(Hexo.parse(this));
     if (res !== JSON.stringify(obj)) {
         errNum++;
-        console.error(`Expected ${this} \nto equal \n${JSON.stringify(obj)}`)
+        console.error(`When test parse:\nExpected ${this} \nto equal \n${JSON.stringify(obj)}`)
+    }
+    const rev = Hexo.parse(Hexo.stringify(Hexo.parse(this)));
+    if (JSON.stringify(rev) !== JSON.stringify(obj)) {
+        errNum++;
+        console.error(`When test stringify:\nExpected ${JSON.stringify(rev)} \nto equal \n${JSON.stringify(obj)}`)
     }
 }
 
@@ -66,7 +71,8 @@ a:
 - c
 ---
 abc
-`, {
+`, 
+{
     meta: {
         a: ['b', 'c']
     },
@@ -80,7 +86,8 @@ d
 f
 <!--more-->
 abc
-`, {
+`, 
+{
     meta: {},
     desc: 'd\nf',
     content: 'abc'
@@ -89,3 +96,18 @@ abc
 if (errNum === 0) {
     console.log('you perfect!');
 }
+
+const s = `---
+title: blog title
+mathjax: true
+tags:
+  - tag1
+  - tag2
+categories: cg1
+abbrlink: 23124
+date: 2023-02-27 21:46:38
+---
+博客的摘要、前言。
+<!--more-->
+博客正文`
+console.log(Hexo.parse(s);
