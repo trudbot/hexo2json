@@ -1,5 +1,10 @@
 # hexo2json
 Convert blogs in hexo to JSON format!
+
+* Use parse to convert hexo style blog text into JSON.
+* Use stringify to convert the specified JSON format into a hexo blog.
+
+Hexo2json helps with your blog migration!
 ## Usage
 hexo框架有如下博客格式.
 ```
