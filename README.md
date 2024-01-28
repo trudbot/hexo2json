@@ -7,7 +7,7 @@ Convert blogs in hexo to JSON format!
 Hexo2json helps with your blog migration!
 ## Usage
 hexo框架有如下博客格式.
-```
+```markdown
 ---
 title: blog title
 mathjax: true
@@ -24,7 +24,7 @@ date: 2023-02-27 21:46:38
 ```
 
 使用`hexo2json`, 将它转换为如下格式!
-```
+```javascript
 {
   meta: {
     title: 'blog title',
@@ -39,11 +39,11 @@ date: 2023-02-27 21:46:38
 }
 ```
 Install through NPM and use it in a browser or node
-```
+```shell
 npm install hexo2json
 ```
 
-```
+```javascript
 import Hexo from hexo2json
 const blogText = "desc\n<!--more-->\ncontent";
 const resultJson = Hexo.parse(blogText);
